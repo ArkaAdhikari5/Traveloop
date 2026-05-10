@@ -1,0 +1,162 @@
+.mytrips-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8fafc;
+
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.mytrips-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.mytrips-header h1 {
+  font-size: 40px;
+  color: #0f172a;
+}
+
+.mytrips-header p {
+  color: #64748b;
+  margin-top: 10px;
+}
+
+.new-trip-btn {
+  padding: 14px 24px;
+
+  background: #38bdf8;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.new-trip-btn:hover {
+  background: #0ea5e9;
+}
+
+/* CARDS */
+
+.mytrips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+}
+
+.mytrip-card {
+  background: white;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.mytrip-card:hover {
+  transform: translateY(-8px);
+}
+
+.mytrip-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+
+.trip-content {
+  padding: 25px;
+}
+
+.trip-content h2 {
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.trip-content p {
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 10px;
+}
+
+.trip-content span {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+
+.trip-buttons {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 20px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  font-size: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.3s;
+}
+
+.edit-btn {
+  background: #38bdf8;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #0ea5e9;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .mytrips-header {
+    flex-direction: column;
+    gap: 20px;
+
+    text-align: center;
+  }
+}

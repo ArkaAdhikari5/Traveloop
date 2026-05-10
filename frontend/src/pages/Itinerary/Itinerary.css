@@ -1,0 +1,135 @@
+.itinerary-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8fafc;
+
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.itinerary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.itinerary-header h1 {
+  color: #0f172a;
+  font-size: 40px;
+}
+
+.add-stop-btn {
+  padding: 14px 22px;
+
+  background: #38bdf8;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  font-size: 16px;
+
+  transition: 0.3s;
+}
+
+.add-stop-btn:hover {
+  background: #0ea5e9;
+}
+
+/* TIMELINE */
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* CARD */
+
+.timeline-card {
+  background: white;
+
+  padding: 30px;
+  border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+  transition: 0.3s;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+/* TOP */
+
+.timeline-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.timeline-top h2 {
+  color: #0f172a;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-top span {
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ACTIVITIES */
+
+.activities {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.activity {
+  background: #f1f5f9;
+
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.activity h3 {
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.activity p {
+  color: #64748b;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .itinerary-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .timeline-top {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
