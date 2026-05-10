@@ -1,84 +1,123 @@
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./CreateTrip.css";
 
-
 const CreateTrip = () => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    startDate: "",
+    endDate: "",
+    budget: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSave = (e) => {
+    e.preventDefault();
+
+    // get old trips
+    const oldTrips = JSON.parse(localStorage.getItem("trips")) || [];
+
+    // new trip object
+    const newTrip = {
+      id: Date.now(),
+      name: formData.name,
+      startDate: formData.startDate,
+      endDate: formData.endDate,
+      budget: formData.budget,
+      description: formData.description,
+    };
+
+    // save
+    const updatedTrips = [...oldTrips, newTrip];
+    localStorage.setItem("trips", JSON.stringify(updatedTrips));
+
+    // go dashboard
+    navigate("/dashboard");
+  };
+
   return (
-    <>
+    <div className="create-trip">
 
-      <div className="create-trip">
+      <div className="trip-form-container">
 
-        <div className="trip-form-container">
+        <h1>Create New Trip ✈️</h1>
+        <p>Plan your dream journey by adding trip details</p>
 
-          <h1>Create New Trip ✈️</h1>
-          <p>
-            Plan your dream journey by adding
-            trip details, budget, and destinations.
-          </p>
+        <form className="trip-form" onSubmit={handleSave}>
 
-          <form className="trip-form">
+          {/* Trip Name */}
+          <div className="form-group">
+            <label>Trip Name</label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Enter trip name"
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-            {/* Trip Name */}
-            <div className="form-group">
-              <label>Trip Name</label>
+          {/* Start Date */}
+          <div className="form-group">
+            <label>Start Date</label>
+            <input
+              name="startDate"
+              type="date"
+              onChange={handleChange}
+            />
+          </div>
 
-              <input
-                type="text"
-                placeholder="Enter trip name"
-              />
-            </div>
+          {/* End Date */}
+          <div className="form-group">
+            <label>End Date</label>
+            <input
+              name="endDate"
+              type="date"
+              onChange={handleChange}
+            />
+          </div>
 
-            {/* Start Date */}
-            <div className="form-group">
-              <label>Start Date</label>
+          {/* Budget */}
+          <div className="form-group">
+            <label>Budget</label>
+            <input
+              name="budget"
+              type="number"
+              placeholder="Enter budget"
+              onChange={handleChange}
+            />
+          </div>
 
-              <input type="date" />
-            </div>
+          {/* Description */}
+          <div className="form-group">
+            <label>Description</label>
+            <textarea
+              name="description"
+              rows="5"
+              placeholder="Write trip description..."
+              onChange={handleChange}
+            ></textarea>
+          </div>
 
-            {/* End Date */}
-            <div className="form-group">
-              <label>End Date</label>
+          {/* Button */}
+          <button className="save-btn" type="submit">
+            Save Trip
+          </button>
 
-              <input type="date" />
-            </div>
-
-            {/* Budget */}
-            <div className="form-group">
-              <label>Budget</label>
-
-              <input
-                type="number"
-                placeholder="Enter budget"
-              />
-            </div>
-
-            {/* Description */}
-            <div className="form-group">
-              <label>Description</label>
-
-              <textarea
-                rows="5"
-                placeholder="Write trip description..."
-              ></textarea>
-            </div>
-
-            {/* Cover Photo */}
-            <div className="form-group">
-              <label>Upload Cover Photo</label>
-
-              <input type="file" />
-            </div>
-
-            {/* Button */}
-            <button className="save-btn">
-              Save Trip
-            </button>
-
-          </form>
-
-        </div>
+        </form>
 
       </div>
-    </>
+
+    </div>
   );
 };
 
