@@ -10,42 +10,53 @@ import Signup from "./pages/Auth/Signup";
 
 import Dashboard from "./pages/Dashboard/Dashboard";
 import CreateTrip from "./pages/CreateTrip/CreateTrip";
+
 import Itinerary from "./pages/Itinerary/Itinerary";
 import Budget from "./pages/Budget/Budget";
 import MyTrips from "./pages/MyTrips/MyTrips";
 import Activities from "./pages/Activities/Activities";
 import CitySearch from "./pages/CitySearch/CitySearch";
 import Packing from "./pages/Packing/Packing";
+
+// ✅ NEW: unified trip page (added, not removed anything)
+import Trip from "./pages/Trip/Trip";
+
 const App = () => {
   return (
     <>
       <Navbar />
 
       <Routes>
-        {/* Home */}
+
+        {/* HOME */}
         <Route path="/" element={<Home />} />
 
-        {/* Auth */}
+        {/* AUTH */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        
-        {/* Dashboard */}
+
+        {/* DASHBOARD */}
         <Route path="/dashboard" element={<Dashboard />} />
-        {/* Create Trip */}
+
+        {/* CREATE TRIP */}
         <Route path="/create-trip" element={<CreateTrip />} />
-        {/* Itinerary */}
+
+        {/* ============================= */}
+        {/* OLD ROUTES (KEEP AS YOU WANTED) */}
+        {/* ============================= */}
+
         <Route path="/itinerary" element={<Itinerary />} />
-        {/* Budget */}
         <Route path="/budget" element={<Budget />} />
-        {/* My Trips */}
         <Route path="/my-trips" element={<MyTrips />} />
-        {/* Activities */}
         <Route path="/activities" element={<Activities />} />
-        {/* City Search */}
         <Route path="/city-search" element={<CitySearch />} />
-        {/* Packing */}
         <Route path="/packing" element={<Packing />} />
 
+        {/* ============================= */}
+        {/* NEW IMPROVED TRIP FLOW */}
+        {/* ============================= */}
+
+        <Route path="/trip/:tripName" element={<Trip />} />
 
       </Routes>
     </>

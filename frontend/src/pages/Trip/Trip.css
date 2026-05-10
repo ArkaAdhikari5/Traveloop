@@ -1,0 +1,141 @@
+.trip-page {
+  padding: 20px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.trip-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.trip-header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  text-transform: uppercase;
+}
+
+.trip-header p {
+  color: #64748b;
+  margin-top: 5px;
+}
+
+/* SECTIONS WRAPPER */
+.trip-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* BOX (ITINERARY / BUDGET / PACKING) */
+.box {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+/* SECTION TITLE */
+.box h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #0f172a;
+  border-left: 4px solid #38bdf8;
+  padding-left: 10px;
+}
+
+/* LIST */
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* PARAGRAPH (budget text) */
+.box p {
+  margin: 8px 0;
+  color: #334155;
+  font-weight: 500;
+}
+
+.trip-summary {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.summary-card h2 {
+  color: #0ea5e9;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.chart-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.chart-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .trip-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .trip-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    padding: 15px;
+  }
+}
+

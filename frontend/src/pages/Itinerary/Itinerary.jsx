@@ -83,7 +83,7 @@ const Itinerary = () => {
 
             <div className="timeline-top">
               <h2>
-                <FaMapMarkerAlt /> Gangtok
+                <FaMapMarkerAlt /> Goa
               </h2>
 
               <span>

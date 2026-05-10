@@ -86,7 +86,7 @@ const Dashboard = () => {
             {/* CARD 1 */}
             <div
               className="trip-card"
-              onClick={() => navigate("/itinerary")}
+              onClick={() => navigate("/trip/goa")}
             >
 
               <img
@@ -107,7 +107,7 @@ const Dashboard = () => {
             {/* CARD 2 */}
             <div
               className="trip-card"
-              onClick={() => navigate("/budget")}
+              onClick={() => navigate("/trip/darjeeling")}
             >
 
               <img
@@ -128,7 +128,8 @@ const Dashboard = () => {
             {/* CARD 3 */}
             <div
               className="trip-card"
-              onClick={() => navigate("/packing")}
+              onClick={() => navigate("/trip/kerala")}
+              
             >
 
               <img
